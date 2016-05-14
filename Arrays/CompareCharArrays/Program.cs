@@ -1,34 +1,36 @@
 ﻿using System;
-
-class Program
+public class CompareCharArrays
 {
-    static void Main()
+    private static void Main()
     {
-        string one = Console.ReadLine();
-        string two = Console.ReadLine();
-        one = one.ToLower();
-        two = two.ToLower();
-        char[] arr1 = one.ToCharArray();
-        char[] arr2 = two.ToCharArray();
+        string charArr1 = Console.ReadLine();
+        string charArr2 = Console.ReadLine();
 
-        if (arr1.Length > arr2.Length)
+        for (int i = 0; i < Math.Min(charArr1.Length, charArr2.Length); i++)
         {
-            Console.WriteLine(">");
+            if (charArr1[i] < charArr2[i])
+            {
+                Console.WriteLine("<");
+                return;
+            }
+            else if (charArr1[i] > charArr2[i])
+            {
+                Console.WriteLine(">");
+                return;
+            }
         }
-        if (arr1.Length < arr2.Length)
+
+        if (charArr1.Length == charArr2.Length)
+        {
+            Console.WriteLine("=");
+        }
+        else if (charArr1.Length < charArr2.Length)
         {
             Console.WriteLine("<");
         }
-        if (arr1.Length == arr2.Length)
+        else if (charArr1.Length > charArr2.Length)
         {
-            for (int i = 0; i < arr1.Length; i++)
-            {
-                if (arr1[i] )
-                {
-
-                }
-            }
+            Console.WriteLine(">");
         }
     }
 }
-
