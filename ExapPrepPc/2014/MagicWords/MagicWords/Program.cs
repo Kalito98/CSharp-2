@@ -14,12 +14,10 @@ class Program
     }
     static string[] Rearange(string[] input)
     {
-        int counter = 0;
-        string[] result = new string[input.Length];
+        string[] result = new string[input.Length + 1];
         for (int i = 0; i < input.Length; i++)
         {
-            int position = input[i].Length % (counter + 1);
-            counter++;
+            int position = (input[i].Length % (input.Length + 1));
             result[position] = input[i];
         }
         return result;
